@@ -1,0 +1,178 @@
+{
+    "data": [
+      {
+        "customerId": 1,
+        "customerName": "John Doe",
+        "transactions": [
+          {
+            "transactionId": 101,
+            "amount": 150,
+            "transactionDate": "2024-07-10",
+            "product": "Watch"
+          },
+          {
+            "transactionId": 102,
+            "amount": 230,
+            "transactionDate": "2024-07-04",
+             "product": "Stationery"
+          },
+          {
+            "transactionId": 103,
+            "amount": 120,
+            "transactionDate": "2024-06-10",
+            "product": "Toys"
+          },
+          {
+            "transactionId": 104,
+            "amount": 350,
+            "transactionDate": "2024-06-01",
+            "product": "Toys"
+          },
+          {
+            "transactionId": 105,
+            "amount": 220,
+            "transactionDate": "2024-05-05",
+            "product": "Stationery"
+          },
+          {
+            "transactionId": 106,
+            "amount": 320,
+            "transactionDate": "2023-12-05",
+            "product": "Stationery"
+          }
+        ]
+      },
+      {
+        "customerId": 2,
+        "customerName": "Anna Smith",
+        "transactions": [
+          {
+            "transactionId": 201,
+            "amount": 150,
+            "transactionDate": "2024-07-10",
+            "product": "Stationery"
+          },
+          {
+            "transactionId": 202,
+            "amount": 330,
+            "transactionDate": "2024-07-04",
+            "product": "Stationery"
+          },
+          {
+            "transactionId": 203,
+            "amount": 120,
+            "transactionDate": "2024-06-10",
+            "product": "HeadSet"
+          },
+          {
+            "transactionId": 204,
+            "amount": 550,
+            "transactionDate": "2024-06-01",
+            "product": "Watch"
+          },
+          {
+            "transactionId": 205,
+            "amount": 220,
+            "transactionDate": "2024-05-05",
+            "product": "Gas"
+          },
+          {
+            "transactionId": 206,
+            "amount": 420,
+            "transactionDate": "2023-12-05",
+            "product": "Petrol"
+          },
+          {
+            "transactionId": 207,
+            "amount": 150,
+            "transactionDate": "2023-11-24",
+            "product": "Petrol"
+          }
+        ]
+      },
+      {
+        "customerId": 3,
+        "customerName": "Peter Jones",
+        "transactions": [
+          {
+            "transactionId": 301,
+            "amount": 170,
+            "transactionDate": "2024-07-10",
+            "product": "Petrol"
+          },
+          {
+            "transactionId": 302,
+            "amount": 130,
+            "transactionDate": "2024-07-04",
+            "product": "Toys"
+          },
+          {
+            "transactionId": 303,
+            "amount": 220,
+            "transactionDate": "2024-06-10",
+            "product": "Grocery"
+          },
+          {
+            "transactionId": 304,
+            "amount": 300,
+            "transactionDate": "2024-06-01",
+            "product": "Gas"
+          },
+          {
+            "transactionId": 305,
+            "amount": 250,
+            "transactionDate": "2024-05-05",
+            "product": "HearPhones"
+          }
+        ]
+      },
+      {
+        "customerId": 4,
+        "customerName": "John Peter",
+        "transactions": [
+          {
+            "transactionId": 401,
+            "amount": 180,
+            "transactionDate": "2024-07-10",
+            "product": "Toys"
+          },
+          {
+            "transactionId": 402,
+            "amount": 130,
+            "transactionDate": "2024-07-04",
+            "product": "Stationery"
+          },
+          {
+            "transactionId": 403,
+            "amount": 320,
+            "transactionDate": "2024-06-10",
+            "product": "HeadSet"
+          },
+          {
+            "transactionId": 404,
+            "amount": 250,
+            "transactionDate": "2024-06-01",
+            "product": "Grocery"
+          },
+          {
+            "transactionId": 405,
+            "amount": 376,
+            "transactionDate": "2024-05-05",
+            "product": "Watch"
+          },
+          {
+            "transactionId": 406,
+            "amount": 100.4,
+            "transactionDate": "2023-08-05",
+            "product": "Watch"
+          },
+          {
+            "transactionId": 406,
+            "amount": 100.2,
+            "transactionDate": "2023-09-05",
+            "product": "Toys"
+          }
+        ]
+      }
+    ]
+  }
