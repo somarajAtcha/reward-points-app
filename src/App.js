@@ -1,5 +1,5 @@
 import React from 'react';
-import RewardPointsSummary from './components/RewardPointsSummary/RewardPointsSummary';
+import RewardPointsSummary from './modules/RewardPointsSummary/RewardPointsSummary';
 
 function App() {
   return (

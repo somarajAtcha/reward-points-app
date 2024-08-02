@@ -44,6 +44,13 @@ Test Case – Component renders correctly with rewardPoints tables
 	•	Spinner and error elements should not be present in the document.
 	.   3 reward points tables should presnet in the document.
 
+	.  Last 3 Months Reward Points table -
+	•  Reward points for "John Doe" should be displayed as
+		July 2024: Total transactions = (150,230.20), hence reward points = (150 – 100) * 2 + 50 + (230.20 – 100) * 2 + 50 = 460
+		June 2024: Total transactions = (120,350.40), hence reward points = (120 – 100) * 2 + 50 + (350.40 – 100) * 2 + 50 = 641
+		May 2024: Total transactions = 90, hence reward points = (90 – 50) * 1 = 40
+	    hence Total Reward Points = 460 + 641 + 40 == 1141;
+
     .  Monthly Reward Points table -
 	•  Reward points for "John Doe" should be displayed as
 		July 2024: Total transactions = (150,230.20), hence reward points = (150 – 100) * 2 + 50 + (230.20 – 100) * 2 + 50 = 460
