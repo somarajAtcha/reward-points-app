@@ -1,0 +1,105 @@
+Test document for RewardPointsSummary  component
+	•	RewardPointsSummary component fetch data from local json , 
+	    calculates the customer reward points for each transaction,monthly, and the total reward points and displays them to relative tables.
+	•	The tests in this document are used to verify the correct functionality of the RewardPointsSummary component.
+
+Mock data – Is used to simulate the response from an API service.
+Test Suite – RewardPointsSummary component.
+	•	Importing the required react testing library functions, RewardPointsSummary component & data fetching function.
+	•	Used before each function to mock the API response with mock data before each test.
+
+
+Test Case – Component renders correctly with loading state
+	•	Test steps –
+	•	Render the RewardPointsSummary component.
+	•	Check if the heading text "Customers Reward Points Summary" is displaying correctly.
+	•	Check if the spinner is rendered.
+	•	Check if the error and tables are not rendered.
+
+	•	Validations –
+	•	The heading text "Customers Reward Points Summary" should be in the document.
+	•	Spinner element should be present in the document.
+	•	Error and table elements should not be present in the document.
+
+Test Case – Component renders correctly with error state
+	•	Test steps –
+	•	Render the RewardPointsSummary component.
+	•	Check if the heading text "Customers Reward Points Summary" is displaying correctly.
+	•	Check if the error is rendered.
+	•	Check if the spinner and tables are not rendered.
+
+	•	Validations –
+	•	Error element should be present in the document.
+	•	Spinner and table elements should not be present in the document.
+
+Test Case – Component renders correctly with rewardPoints tables
+	•	Test steps –
+	•	Render the RewardPointsSummary component.
+	•	Check if the reward points tables is rendered.
+	•	Check if the spinner and error are not rendered.
+	•	Validate the reward points data for each customer.
+
+	•	Validations –
+	•	Reward points tables should be present in the document.
+	•	Spinner and error elements should not be present in the document.
+	.   3 reward points tables should presnet in the document.
+
+	.  Last 3 Months Reward Points table -
+	•  Reward points for "John Doe" should be displayed as
+		July 2024: Total transactions = (150,230.20), hence reward points = (150 – 100) * 2 + 50 + (230.20 – 100) * 2 + 50 = 460
+		June 2024: Total transactions = (120,350.40), hence reward points = (120 – 100) * 2 + 50 + (350.40 – 100) * 2 + 50 = 641
+		May 2024: Total transactions = 90, hence reward points = (90 – 50) * 1 = 40
+	    hence Total Reward Points = 460 + 641 + 40 == 1141;
+
+    .  Monthly Reward Points table -
+	•  Reward points for "John Doe" should be displayed as
+		July 2024: Total transactions = (150,230.20), hence reward points = (150 – 100) * 2 + 50 + (230.20 – 100) * 2 + 50 = 460
+		June 2024: Total transactions = (120,350.40), hence reward points = (120 – 100) * 2 + 50 + (350.40 – 100) * 2 + 50 = 641
+		May 2024: Total transactions = 90, hence reward points = (90 – 50) * 1 = 40
+		December 2023: Total transactions = 50, hence reward points = 0
+
+
+    .  Total Reward Points table -
+	•  Total Reward points for "John Doe" should be displayed as 1141
+       hence Total reward points = 460 + 641 + 40 + 0 = 1141
+
+    .  Reward Points for each transaction - 
+	•  Reward points for "John Doe" should be displayed as
+		July 2024: transaction amount = 150, hence reward points = (150 – 100) * 2 + 50 = 150
+		July 2024: transaction amount  = 230.20, hence reward points = (230.20 – 100) * 2 + 50 = 310
+		June 2024: transaction amount  = 120, hence reward points = (120 – 100) * 2 + 50 = 90
+		June 2024: transaction amount  = (120,350.40), hence reward points = (350.40 – 100) * 2 + 50 = 551
+		May 2024: transaction amount  = 90, hence reward points = (90 – 50) * 1 = 40
+		December 2023: transaction amount = 50, hence reward points = 0
+
+
+test cases results for all repo
+---------------------------------------------|---------|----------|---------|---------|-------------------
+File                                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------------|---------|----------|---------|---------|-------------------
+All files                                    |     100 |      100 |     100 |     100 |                   
+ src                                         |     100 |      100 |     100 |     100 |                   
+  App.js                                     |     100 |      100 |     100 |     100 |                   
+  constants.js                               |     100 |      100 |     100 |     100 |                   
+  logger.js                                  |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerMonthlyRewards       |     100 |      100 |     100 |     100 |                   
+  CustomerMonthlyRewards.js                  |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerRecentMonthlyRewards |     100 |      100 |     100 |     100 |                   
+  CustomerRecentMonthlyRewards.js            |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerTotalRewards         |     100 |      100 |     100 |     100 |                   
+  CustomerTotalRewards.js                    |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerTransactions         |     100 |      100 |     100 |     100 |                   
+  CustomerTransactions.js                    |     100 |      100 |     100 |     100 |                   
+ src/modules/RewardPointsSummary             |     100 |      100 |     100 |     100 |                   
+  RewardPointsSummary.js                     |     100 |      100 |     100 |     100 |                   
+ src/services                                |     100 |      100 |     100 |     100 |                   
+  apiService.js                              |     100 |      100 |     100 |     100 |                   
+  rewardPointsService.js                     |     100 |      100 |     100 |     100 |                   
+ src/utils                                   |     100 |      100 |     100 |     100 |                   
+  rewardPoints.js                            |     100 |      100 |     100 |     100 |                   
+---------------------------------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 passed, 2 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.96 s, estimated 1 s
