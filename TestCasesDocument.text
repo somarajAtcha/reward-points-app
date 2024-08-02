@@ -74,26 +74,32 @@ Test Case – Component renders correctly with rewardPoints tables
 
 
 test cases results for all repo
-------------------------------------|---------|----------|---------|---------|-------------------
-File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------------------------|---------|----------|---------|---------|-------------------
-All files                           |   85.71 |    77.77 |   92.59 |   85.33 |                   
- src                                |   38.88 |        0 |   33.33 |   38.88 |                   
-  App.js                            |     100 |      100 |     100 |     100 |                   
-  constants.js                      |     100 |      100 |     100 |     100 |                   
-  index.js                          |       0 |      100 |     100 |       0 | 7-17              
-  reportWebVitals.js                |       0 |        0 |       0 |       0 | 1-8               
- src/components/RewardPointsSummary |     100 |      100 |     100 |     100 |                   
-  RewardPointsSummary.js            |     100 |      100 |     100 |     100 |                   
- src/services                       |     100 |      100 |     100 |     100 |                   
-  apiService.js                     |     100 |      100 |     100 |     100 |                   
-  rewardPointsService.js            |     100 |      100 |     100 |     100 |                   
- src/utils                          |     100 |      100 |     100 |     100 |                   
-  calculator.js                     |     100 |      100 |     100 |     100 |                   
-  rewardPoints.js                   |     100 |      100 |     100 |     100 |                   
-------------------------------------|---------|----------|---------|---------|-------------------
+---------------------------------------------|---------|----------|---------|---------|-------------------
+File                                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------------|---------|----------|---------|---------|-------------------
+All files                                    |     100 |      100 |     100 |     100 |                   
+ src                                         |     100 |      100 |     100 |     100 |                   
+  App.js                                     |     100 |      100 |     100 |     100 |                   
+  constants.js                               |     100 |      100 |     100 |     100 |                   
+  logger.js                                  |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerMonthlyRewards       |     100 |      100 |     100 |     100 |                   
+  CustomerMonthlyRewards.js                  |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerRecentMonthlyRewards |     100 |      100 |     100 |     100 |                   
+  CustomerRecentMonthlyRewards.js            |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerTotalRewards         |     100 |      100 |     100 |     100 |                   
+  CustomerTotalRewards.js                    |     100 |      100 |     100 |     100 |                   
+ src/components/CustomerTransactions         |     100 |      100 |     100 |     100 |                   
+  CustomerTransactions.js                    |     100 |      100 |     100 |     100 |                   
+ src/modules/RewardPointsSummary             |     100 |      100 |     100 |     100 |                   
+  RewardPointsSummary.js                     |     100 |      100 |     100 |     100 |                   
+ src/services                                |     100 |      100 |     100 |     100 |                   
+  apiService.js                              |     100 |      100 |     100 |     100 |                   
+  rewardPointsService.js                     |     100 |      100 |     100 |     100 |                   
+ src/utils                                   |     100 |      100 |     100 |     100 |                   
+  rewardPoints.js                            |     100 |      100 |     100 |     100 |                   
+---------------------------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 2 passed, 2 total
-Tests:       4 passed, 4 total
+Tests:       5 passed, 5 total
 Snapshots:   0 total
-Time:        1.126 s
+Time:        0.96 s, estimated 1 s
