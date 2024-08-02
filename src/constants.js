@@ -23,8 +23,6 @@ export const MONTHLY_TABLE_HEADINGS = {
   export const RECENT_MONTHLY_TABLE_HEADINGS = {
     id: "Customer Id",
     name: "Customer Name",
-    month1: "Month 1 Rewards Points",
-    month2: "Month 2 Rewards Points",
-    month3: "Month 3 Rewards Points",
-     total: "Reward Points"
+    recentMonth: "Last 3 Months",
+     total: "Total Reward Points"
   };

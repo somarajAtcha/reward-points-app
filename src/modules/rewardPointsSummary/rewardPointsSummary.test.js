@@ -169,24 +169,29 @@ describe("Should render rewards component --- with success data", () => {
         expect(screen.getAllByTestId("reward-container")).toBeTruthy();
         expect(screen.getAllByRole("table").length).toBe(4);
         // header and body rows for customer monthly table
-        expect(screen.getAllByRole("table")[0].querySelectorAll('tr').length).toBe(2);
-        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[0].querySelectorAll('th').length).toBe(6);
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr').length).toBe(3);
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[0].querySelectorAll('th').length).toBe(4);
         expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td').length).toBe(6);
 
         // for verifying last 3 months points and total
         expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[1]).toHaveTextContent('John Doe');
         //month 1
-        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[2]).toHaveTextContent('460');
-        //month 2
-        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[3]).toHaveTextContent('641');
-        //month 3
-        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[4]).toHaveTextContent('40');
-        //total points and should mathc the total 
-        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[5]).toHaveTextContent('1141');
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[2]).toHaveTextContent('July 2024');
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[1]).toHaveTextContent('460');
 
-        const total = Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[2].innerHTML) +
-            Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[3].innerHTML) + Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[4].innerHTML)
-        expect(Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[5].innerHTML)).toBe(total);
+        //month 2
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[3]).toHaveTextContent('June 2024');
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[2]).toHaveTextContent('641');
+
+        //month 3
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[1].querySelectorAll('td')[4]).toHaveTextContent('May 2024');
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[3]).toHaveTextContent('40');
+        //total points and should match the total 
+        expect(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[4]).toHaveTextContent('1141');
+
+        const total = Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[1].innerHTML) +
+            Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[2].innerHTML) + Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[3].innerHTML)
+        expect(Number(screen.getAllByRole("table")[0].querySelectorAll('tr')[2].querySelectorAll('td')[4].innerHTML)).toBe(total);
     });
 
 
