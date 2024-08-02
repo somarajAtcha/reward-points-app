@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { fetchRewardPointsData } from '../../services/rewardPointsService';
-import { MONTHLY_TABLE_HEADINGS, TOTAL_REWARDS_TABLE_HEADINGS, TRANSACTIONS_TABLE_HEADINGS } from '../../constants';
-import CustomerTotalRewards from '../../components/CustomerTotalRewards/CustomerTotalRewards';
-import CustomerTransactions from '../../components/CustomerTransactions/CustomerTransactions';
-import CustomerMonthlyRewards from '../../components/CustomerMonthlyRewards/CustomerMonthlyRewards';
-import CustomerRecentMonthlyRewards from '../../components/CustomerRecentMonthlyRewards/CustomerRecentMonthlyRewards';
-import './RewardPointsSummary.css'
+import CustomerTotalRewards from '../../components/customerTotalRewards/customerTotalRewards';
+import CustomerTransactions from '../../components/customerTransactions/customerTransactions';
+import CustomerMonthlyRewards from '../../components/customerMonthlyRewards/customerMonthlyRewards';
+import CustomerRecentMonthlyRewards from '../../components/customerRecentMonthlyRewards/customerRecentMonthlyRewards';
+import './rewardPointsSummary.css'
 
 
 const RewardPointsSummary = () => {

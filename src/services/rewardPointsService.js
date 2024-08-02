@@ -1,5 +1,5 @@
 import { fetchRewardPointsDataApi } from './apiService';
-import { formatRewardPointsData } from '../utils/rewardPoints';
+import { formatRewardPointsData } from '../utils/commonFunctions/rewardPoints.js';
 import logger from '../logger.js';
 
 /** Fetch the reward points data  from api 
@@ -12,11 +12,9 @@ export const fetchRewardPointsData = async (setIsLoading, setIsError, setRewardP
         const response = await fetchRewardPointsDataApi();
         const res = await response.json();
         const formatedData = formatRewardPointsData(res.data);
-        setTimeout(() => {
-            // logger.info(formatedData);
-            setRewardPointsData([...formatedData]);
-            setIsLoading(false);
-        }, 500);
+        // logger.info(formatedData);
+        setRewardPointsData([...formatedData]);
+        setIsLoading(false);
     }
     catch (err) {
         logger.error(err);

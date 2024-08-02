@@ -1,4 +1,4 @@
-import { MAX_AMOUNT, MAX_POINTS, MIN_AMOUNT } from "../constants";
+import { MAX_AMOUNT, MAX_POINTS, MIN_AMOUNT } from "../../../constants";
 
 /**
  * 
@@ -7,6 +7,6 @@ import { MAX_AMOUNT, MAX_POINTS, MIN_AMOUNT } from "../constants";
  */
 export const calculatePoints = (amount) => {
   if (amount <= MIN_AMOUNT) return 0;
-  if (amount <= MAX_AMOUNT) return amount - 50;
+  if (amount <= MAX_AMOUNT) return Math.round(amount - 50);
   return Math.round((amount - MAX_AMOUNT) * MAX_POINTS) + 50;
 };

@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import RewardPointsSummary from './RewardPointsSummary';
+import RewardPointsSummary from './rewardPointsSummary';
 import * as apiService from '../../services/apiService';
 import { act } from 'react';
-jest.useFakeTimers();
 
 const mockData = {
     data: [
@@ -92,9 +91,6 @@ describe("Should render rewards component --- with success data", () => {
         await act(async () => {
             render(<RewardPointsSummary />)
         })
-        act(() => {
-            jest.runAllTimers();
-        });
         expect(screen.queryByText('spinner')).toBeNull();
         expect(screen.queryByText('error')).toBeNull();
         expect(screen.getAllByTestId("reward-container")).toBeTruthy();
@@ -168,9 +164,6 @@ describe("Should render rewards component --- with success data", () => {
         await act(async () => {
             render(<RewardPointsSummary />)
         })
-        act(() => {
-            jest.runAllTimers();
-        });
         expect(screen.queryByText('spinner')).toBeNull();
         expect(screen.queryByText('error')).toBeNull();
         expect(screen.getAllByTestId("reward-container")).toBeTruthy();

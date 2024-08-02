@@ -1,4 +1,4 @@
-import { calculatePoints } from "./calculator";
+import { calculatePoints } from "./calculator/calculator";
 
 /**
  * 
