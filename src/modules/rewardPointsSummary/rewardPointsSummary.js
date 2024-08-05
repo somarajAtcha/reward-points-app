@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { fetchRewardPointsData } from '../../services/rewardPointsService';
 import CustomerTotalRewards from '../../components/customerTotalRewards/customerTotalRewards';
 import CustomerTransactions from '../../components/customerTransactions/customerTransactions';
-import CustomerMonthlyRewards from '../../components/customerMonthlyRewards/customerMonthlyRewards';
 import CustomerRecentMonthlyRewards from '../../components/customerRecentMonthlyRewards/customerRecentMonthlyRewards';
 import './rewardPointsSummary.css'
 
