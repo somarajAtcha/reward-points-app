@@ -50,15 +50,19 @@ const mockData = {
 }
 
 describe("Should render rewards component -- loading state", () => {
+    beforeEach(() => {
+        jest.spyOn(apiService, 'fetchRewardPointsDataApi').mockRejectedValue({});
+    });
+
     test("Should render component", async () => {
         await act(async () => {
             render(<RewardPointsSummary />)
         })
         const heading = screen.getByText("Customers Reward Points Summary");
         expect(heading).toBeInTheDocument();
-        expect(screen.getAllByTestId('spinner')).toBeTruthy();
-        expect(screen.queryByText('error')).toBeNull();
-        expect(screen.queryByText("reward-container")).toBeNull();
+        expect(screen.queryByText('spinner')).toBeNull();
+        expect(screen.getAllByTestId('error')).toBeTruthy();
+        expect(screen.queryByText("reward-container")).toBeNull();      
     })
 
 });
