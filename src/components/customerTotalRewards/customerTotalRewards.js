@@ -18,7 +18,7 @@ const CustomerTotalRewards = ({ rewardPointsData, totalType }) => {
                     <tr key={customer.customerName}>
                         {
                             Object.keys(TOTAL_REWARDS_TABLE_HEADINGS).map(heading => (
-                                <td key={`${customer.customerName}-${heading}`}>{totalType === 'recent' ? customer.last3MonthsTotal : customer[heading]}</td>
+                                <td key={`${customer.customerName}-${heading}`}>{totalType === 'recent' && heading === 'total' ? customer.last3MonthsTotal : customer[heading]}</td>
                             ))}
                     </tr>
                 )) : (<tr><td colSpan="3">No data found</td></tr>)
