@@ -3,41 +3,37 @@ import { RECENT_MONTHLY_TABLE_HEADINGS } from "../../constants";
 
 /** Render the  monthly reward points table for last 3 months */
 const CustomerRecentMonthlyRewards = ({ rewardPointsData }) => {
-    return (<table className="rewards-table">
-        <thead>
-            <tr >
-                {
-                    Object.keys(RECENT_MONTHLY_TABLE_HEADINGS).map(heading => (
-                        <th key={heading} colSpan={heading.includes('recentMonth') ? 3 : ''}>{RECENT_MONTHLY_TABLE_HEADINGS[heading]} </th>
-                    ))
-                }
-            </tr>
-        </thead>
-        <tbody>
-            {
-                rewardPointsData.map(customer => (
-                    <React.Fragment key={`${customer.customerId}-monthly`}>
-                        <tr key={`${customer.customerId}-monthly`}>
-                            <td>{customer.customerId}</td>
-                            <td key={customer.customerName}>{customer.customerName}</td>
-                            {Object.keys(customer.last3Months).map(month => (
-                                <td key={month}>{month}</td>
-                            ))}
-                            <td></td>
-                        </tr>
-                        <tr key={`${customer.customerId}-points`}>
-                            <td colSpan={2}>Reward points for month & total </td>
-                            {Object.keys(customer.last3Months).map(month => (
-                                <td key={month + '-points'}>{customer.last3Months[month]}</td>
-                            ))}
-                            <td>{customer.last3MonthsTotal}</td>
-                        </tr>
-                    </React.Fragment>
-
-                ))
-            }
-        </tbody>
-    </table>);
+    return (
+        (rewardPointsData.last3Months && rewardPointsData.last3Months.length > 0) ? rewardPointsData.last3Months.map(month => (
+            <table className="rewards-table" key={month}>
+                <caption>{month}</caption>
+                <thead>
+                    <tr >
+                        {
+                            Object.keys(RECENT_MONTHLY_TABLE_HEADINGS).map(heading => (
+                                <th key={heading}>{RECENT_MONTHLY_TABLE_HEADINGS[heading]} </th>
+                            ))
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        rewardPointsData.months[month].transactions.map(customer => (
+                            <tr key={`${customer.customerId}-${customer.transactionId}`}>
+                                <td>{customer.customerId}</td>
+                                <td>{customer.customerName}</td>
+                                <td>{customer.transactionId}</td>
+                                <td>${customer.amount}</td>
+                                <td>{customer.transactionDate}</td>
+                                <td>{month.split(' ')[1]}</td>
+                                <td>{customer.rewardPoints}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        )) : <div>No data found</div>
+    );
 }
 
 export default CustomerRecentMonthlyRewards;

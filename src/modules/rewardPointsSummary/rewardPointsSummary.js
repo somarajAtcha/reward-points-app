@@ -8,7 +8,7 @@ import './rewardPointsSummary.css'
 
 
 const RewardPointsSummary = () => {
-  const [rewardPointsData, setRewardPointsData] = useState([]);
+  const [rewardPointsData, setRewardPointsData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -33,16 +33,16 @@ const RewardPointsSummary = () => {
         (!isError && !isLoading && rewardPointsData) && (
           <div className="table-container" data-testid="reward-container">
             <div>
-              <h3>Customer Last 3 Months Rewards</h3>
+              <h3>Recent 3 Months Reward Points</h3>
               <CustomerRecentMonthlyRewards rewardPointsData={rewardPointsData} />
             </div>
             <div>
-              <h3>Customer Monthly Rewards</h3>
-              <CustomerMonthlyRewards rewardPointsData={rewardPointsData} />
+              <h3>Recent 3 Months Total Reward Points</h3>
+              <CustomerTotalRewards rewardPointsData={rewardPointsData} totalType='recent' />
             </div>
             <div>
               <h3>Customer Total Rewards</h3>
-              <CustomerTotalRewards rewardPointsData={rewardPointsData} />
+              <CustomerTotalRewards rewardPointsData={rewardPointsData} totalType='all' />
             </div>
             <div>
               <h3>Customer Transactions</h3>

@@ -13,7 +13,7 @@ export const fetchRewardPointsData = async (setIsLoading, setIsError, setRewardP
         const res = await response.json();
         const formatedData = formatRewardPointsData(res.data);
         // logger.info(formatedData);
-        setRewardPointsData([...formatedData]);
+        setRewardPointsData(formatedData);
         setIsLoading(false);
     }
     catch (err) {

@@ -1,7 +1,7 @@
 import { TOTAL_REWARDS_TABLE_HEADINGS } from "../../constants";
 
 /** Render the total reward points table */
-const CustomerTotalRewards = ({ rewardPointsData }) => {
+const CustomerTotalRewards = ({ rewardPointsData, totalType }) => {
     return (<table className="rewards-table">
         <thead>
             <tr>
@@ -14,14 +14,14 @@ const CustomerTotalRewards = ({ rewardPointsData }) => {
         </thead>
         <tbody>
             {
-                rewardPointsData.map(customer => (
+                (rewardPointsData.customers && rewardPointsData.customers.length > 0) ? rewardPointsData.customers.map(customer => (
                     <tr key={customer.customerName}>
                         {
                             Object.keys(TOTAL_REWARDS_TABLE_HEADINGS).map(heading => (
-                                <td key={`${customer.customerName}-${heading}`}>{customer[heading]}</td>
+                                <td key={`${customer.customerName}-${heading}`}>{totalType === 'recent' ? customer.last3MonthsTotal : customer[heading]}</td>
                             ))}
                     </tr>
-                ))
+                )) : (<tr><td colSpan="3">No data found</td></tr>)
             }
         </tbody>
     </table>);

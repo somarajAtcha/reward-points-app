@@ -14,7 +14,7 @@ const CustomerTransactions = ({ rewardPointsData }) => {
         </thead>
         <tbody>
             {
-                rewardPointsData.map(customer => (
+                (rewardPointsData.customers && rewardPointsData.customers.length > 0) ? rewardPointsData.customers.map(customer => (
                     customer.transactions.map(transaction => (
                         <tr key={`${customer.customerId}-${transaction.transactionId}`}>
                             <td>{transaction.transactionId}</td>
@@ -25,7 +25,7 @@ const CustomerTransactions = ({ rewardPointsData }) => {
                             <td>{transaction.rewardPoints}</td>
                         </tr>
                     ))
-                ))
+                )) : <tr><td colSpan="6">No data found</td></tr>
             }
         </tbody>
     </table>);
