@@ -11,8 +11,9 @@ export const fetchRewardPointsData = async (setIsLoading, setIsError, setRewardP
     try {
         const response = await fetchRewardPointsDataApi();
         const res = await response.json();
+        logger.info(res, 'api response');
         const formatedData = formatRewardPointsData(res.data);
-        // logger.info(formatedData);
+        logger.info(formatedData, 'formatted data');
         setRewardPointsData(formatedData);
         setIsLoading(false);
     }
