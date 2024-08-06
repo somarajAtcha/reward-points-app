@@ -30,6 +30,10 @@ Given a record of every transaction during a three month period, calculate the r
 
 `npm test`
 
+### Launch the test coverage.
+
+`npm test -- --coverage`
+
 ### Build the app for production to the `build` folder.
 
 `npm run build`
@@ -51,6 +55,10 @@ Given a record of every transaction during a three month period, calculate the r
 ### Test cases
 
 ![alt text](testcases.png)
+
+### Test cases coverage
+
+![alt text](testcases_coverage.png)
 
 ## Sample data
 

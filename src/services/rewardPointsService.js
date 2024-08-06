@@ -17,7 +17,7 @@ export const fetchRewardPointsData = async (setIsLoading, setIsError, setRewardP
         setIsLoading(false);
     }
     catch (err) {
-       // logger.error(err);
+        logger.error(err);
         setIsLoading(false);
         setIsError(true);
     }

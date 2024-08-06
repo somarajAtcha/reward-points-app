@@ -54,7 +54,7 @@ describe("Should render rewards component -- loading state", () => {
         jest.spyOn(apiService, 'fetchRewardPointsDataApi').mockRejectedValue({});
     });
 
-    test("Should render component", async () => {
+    it("Should render component", async () => {
         await act(async () => {
             render(<RewardPointsSummary />)
         })
