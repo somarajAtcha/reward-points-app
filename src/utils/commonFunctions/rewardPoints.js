@@ -12,6 +12,16 @@ export const sortTransactions = (transactionA, transactionB) => {
 
 /**
  * 
+ * @param {string} transactionMonthA
+ * @param {string} transactionMonthB 
+ * @returns list of sorted array
+ */
+export const sortTransactionsByMonthYear = (transactionMonthA, transactionMonthB) => {
+  return new Date(transactionMonthB) - new Date(transactionMonthA);
+}
+
+/**
+ * 
  * @param {array} rewardPointsData 
  * @returns formatted customers reward points data 
  */
@@ -48,10 +58,10 @@ export const formatRewardPointsData = (rewardPointsData) => {
     });
     return response;
   }, { customers: [], months: {} });
-  rewardPointsData.last3Months = Object.keys(rewardPointsData.months).slice(0, 3);
+  rewardPointsData.last3Months = Object.keys(rewardPointsData.months).sort(sortTransactionsByMonthYear).slice(0, 3);
   rewardPointsData.customers = rewardPointsData.customers.map(customer => {
     customer.last3MonthsTotal = rewardPointsData.last3Months.reduce((total, month) => {
-      total += customer.months[month];
+      total += customer.months[month] ? customer.months[month] : 0;
       return total;
     }, 0)
     return customer;
