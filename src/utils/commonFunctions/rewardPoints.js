@@ -26,38 +26,36 @@ export const sortTransactionsByMonthYear = (transactionMonthA, transactionMonthB
  * @returns formatted customers reward points data 
  */
 export const formatRewardPointsData = (rewardPointsData) => {
-  rewardPointsData = rewardPointsData.reduce((response, customer) => {
-    const { customerId, customerName, transactions } = customer;
-    const sortedTransactions = transactions.sort(sortTransactions);
-    let pointsByCustomer = { total: 0, months: {}, transactions: [] };
-    pointsByCustomer = sortedTransactions.reduce((transactionOutput, transaction) => {
-      const { amount, transactionDate } = transaction;
-      const month = new Date(transactionDate).toLocaleString('default', { month: 'long', year: 'numeric' });
-      const points = calculatePoints(amount);
-      if (!transactionOutput.months[month]) {
-        transactionOutput.months[month] = 0;
-      }
-      if (!response.months[month]) {
-        response.months[month] = { transactions: [] };
-      }
-      transactionOutput.months[month] += points;
-      transactionOutput.total += points;
-      transactionOutput.transactions.push({
-        ...transaction,
-        rewardPoints: points
-      })
-      response.months[month].transactions.push({
-        customerId, customerName,
-        ...transaction,
-        rewardPoints: points
-      });
-      return transactionOutput;
-    }, pointsByCustomer);
-    response.customers.push({
-      customerId, customerName, ...pointsByCustomer
+  rewardPointsData = rewardPointsData.sort(sortTransactions);
+  rewardPointsData = rewardPointsData.reduce((response, transaction) => {
+    const { customerId, customerName, amount, transactionDate } = transaction;
+    const month = new Date(transactionDate).toLocaleString('default', { month: 'long', year: 'numeric' });
+    const points = calculatePoints(amount);
+    if (!response.months[month]) {
+      response.months[month] = { transactions: [] };
+    }
+    response.months[month].transactions.push({
+      ...transaction,
+      rewardPoints: points
     });
+    let pointsByCustomer = { total: 0, months: {}, transactions: [] };
+    if (!response.customers[customerId]) {
+      response.customers[customerId] = {
+        customerId, customerName, ...pointsByCustomer
+      }
+    }
+    if (!response.customers[customerId].months[month]) {
+      response.customers[customerId].months[month] = 0;
+    }
+    response.customers[customerId].months[month] += points;
+    response.customers[customerId].total += points;
+    response.customers[customerId].transactions.push({
+      ...transaction,
+      rewardPoints: points
+    })
     return response;
-  }, { customers: [], months: {} });
+  }, { customers: {}, months: {} });
+  rewardPointsData.customers = Object.values(rewardPointsData.customers);
   rewardPointsData.last3Months = Object.keys(rewardPointsData.months).sort(sortTransactionsByMonthYear).slice(0, 3);
   rewardPointsData.customers = rewardPointsData.customers.map(customer => {
     customer.last3MonthsTotal = rewardPointsData.last3Months.reduce((total, month) => {
