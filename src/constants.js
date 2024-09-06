@@ -2,11 +2,11 @@ export const MIN_AMOUNT = 50;
 export const MAX_AMOUNT = 100;
 export const MAX_POINTS = 2;
 export const MONTHLY_TABLE_HEADINGS = {
-  id: "Customer Id",
-  name: "Customer Name",
+  customerId: "Customer Id",
+  customerName: "Customer Name",
   month: "Month",
   year: "Year",
-  total: "Reward Points"
+  total: "Total Reward Points"
 };
 export const TOTAL_REWARDS_TABLE_HEADINGS = {
   customerId: "Customer Id",

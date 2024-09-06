@@ -40,6 +40,10 @@ const RewardPointsSummary = () => {
               <CustomerTotalRewards rewardPointsData={rewardPointsData} totalType='recent' />
             </div>
             <div>
+              <h3>Recent Monthly Total Reward Points</h3>
+              <CustomerTotalRewards rewardPointsData={rewardPointsData} totalType='monthly' />
+            </div>
+            <div>
               <h3>Customer Total Rewards</h3>
               <CustomerTotalRewards rewardPointsData={rewardPointsData} totalType='all' />
             </div>

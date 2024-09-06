@@ -14,15 +14,22 @@
     margin: 1rem auto;
 }
 
+tr:nth-child(even) {
+    background-color: rgb(215, 235, 250);
+}
+
+tr:nth-child(odd) {
+    background-color: #fff
+}
+
 th {
     padding: 1rem;
     background-color: lightskyblue;
-    width: 250px;
 }
 
 td {
     padding: 0.3rem;
-    background-color: rgb(215, 235, 250);
+   /* background-color: rgb(215, 235, 250); */
     text-align: center;
 }
 
@@ -71,3 +78,14 @@ h1 {
     width: 100%;
     padding: 20px;
 }
+
+tbody {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+}
+ thead,  tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }

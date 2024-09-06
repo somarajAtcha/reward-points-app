@@ -47,6 +47,8 @@ Given a record of every transaction during a three month period, calculate the r
 ### Application running state
 
 ![alt text](applicationUp.png)
+![alt text](applicationUp1.png)
+![alt text](applicationUp2.png)
 
 ### Application error
 
